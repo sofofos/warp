@@ -1,0 +1,17 @@
+# flyctl launch added from .gitignore
+**/.venv
+**/.vscode
+**/__pycache__
+**/*.egg-info
+**/*.sqlite
+**/*.bak
+**/*.swp
+**/.DS_Store
+**/.idea
+**/node_modules
+**/*.pyc
+warp/templates/headers
+warp/static/dist
+**/docker-compose.yml
+
+fly.toml

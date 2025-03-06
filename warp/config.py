@@ -76,11 +76,15 @@ class DevelopmentSettings(DefaultSettings):
 
 
 class ProductionSettings(DefaultSettings):
+    DATABASE = os.getenv("WARP_DATABASE")
 
-    # use mellon (Apache SAML module) for authentication
-    #AUTH_MELLON = False
-    #MELLON_ENDPOINT = "/sp"
-    #MELLON_DEFAULT_GROUP = "everybody"
+    DATABASE_INIT_SCRIPT = [
+        "sql/clean_db.sql",
+        "sql/schema.sql",
+        "sql/sample_data.sql"
+    ]
+
+    SECRET_KEY = os.getenv("WARP_SECRET_KEY")
 
     # this is intentionally empty, as in production
     # DATABASE and SECRET_KEY should be passed via ENV
